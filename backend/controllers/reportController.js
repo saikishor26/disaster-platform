@@ -12,7 +12,7 @@ exports.createReport = async (req, res) => {
 
     await report.save();
 
-    global.importScripts.emit("report_updated", {
+    global.io.emit("report_updated", {
       action: "created",
       data: report,
     });
